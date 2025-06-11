@@ -1,0 +1,94 @@
+<html>
+<head>
+     <title> Multiplication Table Generator App </title>
+     <link rel="icon"  href="icon.ico"> </link>
+<style>
+      *{margin:auto;text-align:center;font-size:24px;font-family:Segoe UI;}
+      body{background:linear-gradient(to top,#a8cad6,#bee9f9);padding:30px;}
+      #container {display:flex;flex-direction:column; justify-content:center;align-items:center;padding:30px;border:5px solid #b97ecb; border-radius:20px;width:70%;background-color: #e1f3f8;}
+      h1{background-color:#77a0c1; color:black; width:70%;margin-bottom:30px;padding:20px;border-radius:20px;border:2px solid black;}
+      input[type="number"] {border:2px solid black;padding:10px;width:80%;border-radius:10px;margin-bottom:20px;}
+      input[type="submit"] {border:2px solid black;padding:10px;border-radius:10px;background-color:white;margin:20px;}
+      input[type="submit"]:hover{background-color:#96c8ef;color:#3a003a;}
+      #msg { margin-top: 30px;color: #2b2b2b;font-weight: bold;line-height:1.8;}
+
+</style>
+</head>
+<body>
+     <h1>  Multiplication Table Generator App </h1> <br/>
+     <div id="container">
+     <form onsubmit="calculate()">
+     <input type="number" step="any" placeholder="enter a number" id="n1" /> <br/><br/>
+     <input type="submit" value="Method-1"> 
+     <input type="submit" value="Method-2"> 
+     <input type="submit" value="Method-3"> 
+
+     </form>
+<h2 id="msg" />  </div>
+<script>
+       function calculate()
+{
+       event.preventDefault();
+       let n1 = document.getElementById("n1");
+       let msg = document.getElementById("msg");
+       let action = document.activeElement.value;
+
+ if (n1 === document.activeElement) 
+{
+    return; // Prevent accidental Enter key behavior , so basically it checks whether n1 and the current active value which is the element that is focused is the same or not
+}
+
+
+if(n1.value === "")
+{
+ alert("please enter a number");
+ msg.innerHTML ="";
+ n1.focus();
+ return;
+}
+msg.innerHTML =""+n1.value;
+
+let n = parseInt(n1.value);
+let result ="";
+let output = "";
+
+if(action === "Method-1")
+{
+for(let i=1; i<=10; i++)
+{
+ result = i*n;
+ output += n + " * " + i + " = " + result + "<br/>";
+}
+
+msg.innerHTML = "Method-1 </br>" + output;
+
+}
+
+else if(action === "Method-2")
+{
+ let i=1;
+ do {
+ result = i*n;
+ output += n + " * " + i + " = " + result + "<br/>";
+ i++;
+} while(i<=10)
+msg.innerHTML = "Method-2 </br>" + output;
+
+}
+
+else if (action === "Method-3")
+{
+ let i=1;
+ while(i<=10){
+ result = i*n;
+ output += n + " * " + i + " = " + result + "<br/>";
+ i++;
+}
+msg.innerHTML = "Method-3 </br>" + output;
+
+}
+}
+
+</script>
+</body>
+</html>
