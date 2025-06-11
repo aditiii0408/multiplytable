@@ -57,7 +57,7 @@ if(action === "Method-1")
 for(let i=1; i<=10; i++)
 {
  result = i*n;
- output += n + " * " + i + " = " + result + "<br/>";
+ output += n + " * " + i + " = " + result.toFixed(2) + "<br/>";
 }
 
 msg.innerHTML = "Method-1 </br>" + output;
@@ -69,7 +69,7 @@ else if(action === "Method-2")
  let i=1;
  do {
  result = i*n;
- output += n + " * " + i + " = " + result + "<br/>";
+ output += n + " * " + i + " = " + result.toFixed(2) + "<br/>";
  i++;
 } while(i<=10)
 msg.innerHTML = "Method-2 </br>" + output;
@@ -81,7 +81,7 @@ else if (action === "Method-3")
  let i=1;
  while(i<=10){
  result = i*n;
- output += n + " * " + i + " = " + result + "<br/>";
+ output += n + " * " + i + " = " + result.toFixed(2) + "<br/>";
  i++;
 }
 msg.innerHTML = "Method-3 </br>" + output;
